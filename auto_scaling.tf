@@ -5,7 +5,7 @@ resource "aws_launch_configuration" "alc" {
     aws_security_group.my_server_sg.id]
   user_data = <<-EOF
                 #!/bin/bash
-                echo "I love you!" > index.html
+                echo "Hello world!" > index.html
                 nohup busybox httpd -f -p 80 &
                 EOF
 }
