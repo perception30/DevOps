@@ -11,6 +11,6 @@ spec:
     - name: http
       port: 27017
 
-  type: ClusterIP
+  type: NodePort
 
 

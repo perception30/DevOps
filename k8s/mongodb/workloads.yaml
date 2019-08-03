@@ -15,4 +15,12 @@ spec:
       containers:
         - name: mongodb
           image: mongo:3.6.5-jessie
+          volumeMounts:
+            - mountPath: /data/db
+              name: mongo-persistent-volume
+
+      volumes:
+        - name: mongo-persistent-volume
+          persistentVolumeClaim:
+            claimName: mongodb-pvc
 
