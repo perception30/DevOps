@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: fleetman-webapp
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app:  webapp
   ports:
     - name: http
       port: 80
-      nodePort: 30080
 
