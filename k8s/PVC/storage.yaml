@@ -3,13 +3,21 @@ kind: PersistentVolumeClaim
 metadata:
   name: mongodb-pvc
 spec:
-  storageClassName: cloud-ssd
+  storageClassName: faster
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
 
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: faster
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-ssd
 #---
 #apiVersion: storage.k8s.io/v1
 #kind: StorageClass
